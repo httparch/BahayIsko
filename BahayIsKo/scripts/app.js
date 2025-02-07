@@ -12,8 +12,7 @@ let index = 0;
 
 function nextQuestion() {
     if (index >= quiz.length) {
-        
-        console.log(calculateResult())
+
         let result = describeResult(calculateResult())
         quiz_page.innerHTML = `<p>Congratulations! You've completed the quiz.</p> ${result}`;
         return;
@@ -84,6 +83,7 @@ function getMeaning(index){
 
     return meaning;
 }
+
 function describeResult(arrayOfHouse){
 
     let result = ``;
@@ -115,3 +115,9 @@ quiz_page.addEventListener('click', (e) => {
     }
 });
 
+start_button.addEventListener('mouseover', (e) =>{
+    console.log('ger')
+    if (e.target.classList.contains('begin')) {
+        e.target.style.src = `../assets/beginbutton-hover.svg`;
+    }
+})

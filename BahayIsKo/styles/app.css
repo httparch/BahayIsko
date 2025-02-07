@@ -1,3 +1,36 @@
-img {
+/*Start page*/
+
+*{
+    background-color: #641e1e;
+}
+
+.start-page {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center 
+}
+
+.start-image {
+    width: 450px;
+    display: flex;
+    justify-content: center
+}
+
+.begin-button {
+    padding: 0;
+    border: none;
+    background: none;
+    opacity: 60%;
+}
+
+.begin-button img{
     width: 200px;
+    height: 140px;
+}
+
+.begin-button:hover {
+    opacity: 100%;
+    width: 250px;
+    height: 160px;
 }
