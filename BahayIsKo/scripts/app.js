@@ -1,5 +1,5 @@
 import { quiz } from "./data/quiz.js";
-
+import { houses } from "./data/houses.js";
 // Buttons
 let start_button = document.querySelector('.begin-button');
 const myArray = [];
@@ -7,14 +7,17 @@ const myArray = [];
 // Containers
 let quiz_page = document.querySelector('.quiz-page');
 let start_page = document.querySelector('.start-page');
+let result_page = document.querySelector('.result-page');
 
 let index = 0;
 
 function nextQuestion() {
     if (index >= quiz.length) {
 
-        let result = describeResult(calculateResult())
-        quiz_page.innerHTML = `<p>Congratulations! You've completed the quiz.</p> ${result}`;
+        let result = describeResult(calculateResult());
+        result_page.style.display = 'block';
+        quiz_page.style.display = 'none';
+        result_page.innerHTML = result;
         return;
     }
 
@@ -22,8 +25,8 @@ function nextQuestion() {
 
     let html = `
         <div class="quiz-container">
-            <p class="question">${currentQuestion.question}</p>
-            <img src="${currentQuestion.image || ''}" alt="${currentQuestion.imageAlt || 'Question Image'}">
+            <p class="question">Q${index+1}/Q10: ${currentQuestion.question}</p>
+            <div class="image-container"><img class="quiz-image" src="${currentQuestion.image || ''}" alt="${currentQuestion.imageAlt || 'Question Image'}"></>
             <button class="choices" data-question-id="1">${currentQuestion.choices.A}</button>
             <button class="choices" data-question-id="2">${currentQuestion.choices.B}</button>
             <button class="choices" data-question-id="3">${currentQuestion.choices.C}</button>
@@ -55,33 +58,8 @@ function calculateResult(){
             arrayOfHouse.push(otherHouse);
         }
     }
-
+    console.log(typeof arrayOfHouse[0])
     return arrayOfHouse;
-}
-
-function getMeaning(index){
-    let meaning = ``;
-    switch(index){
-        case 1:
-            meaning = `Hawks`;
-            break;
-        case 2:
-            meaning = `Wolves`;
-            break;
-        case 3:
-            meaning = `Foxes`;
-            break;
-        case 4:
-            meaning = `Dolphins`;
-            break;
-        case 5:
-            meaning = `Owls`;
-            break;
-        default:
-            break;
-    }
-
-    return meaning;
 }
 
 function describeResult(arrayOfHouse){
@@ -89,9 +67,17 @@ function describeResult(arrayOfHouse){
     let result = ``;
 
     if(arrayOfHouse.length == 1){ //solo
-        result = `You are a ${getMeaning(arrayOfHouse[0])}`;
+        const num1 = arrayOfHouse[0];
+        result = `<p>You are from ${houses[num1].name}</p>
+                    <img src="${houses[num1].image}" alt="">
+                    <button class="restart">Take again</button>`
     }else if(arrayOfHouse.length == 2){ //dual
-        result = `You are a both ${getMeaning(arrayOfHouse[0])} and ${getMeaning(arrayOfHouse[1])}`;
+        const num1 = arrayOfHouse[0];
+        const num2 = arrayOfHouse[1];
+        result = `<p>You are mixed breed of ${houses[num1].name} and ${houses[num2].name}</p>
+                    <img src="${houses[num1].image}" alt=""> 
+                    <img src="${houses[num2].image}" alt=""> 
+                    <button class="restart">Take again</button>`
     }
 
     return result;
