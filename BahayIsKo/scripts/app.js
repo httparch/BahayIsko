@@ -2,12 +2,15 @@ import { quiz } from "./data/quiz.js";
 import { houses } from "./data/houses.js";
 // Buttons
 let start_button = document.querySelector('.begin-button');
+let restart_button = document.querySelector('.restart');
+
 const myArray = [];
 
 // Containers
 let quiz_page = document.querySelector('.quiz-page');
 let start_page = document.querySelector('.start-page');
 let result_page = document.querySelector('.result-page');
+
 
 let index = 0;
 
@@ -68,16 +71,14 @@ function describeResult(arrayOfHouse){
 
     if(arrayOfHouse.length == 1){ //solo
         const num1 = arrayOfHouse[0];
-        result = `<p>You are from ${houses[num1].name}</p>
-                    <img src="${houses[num1].image}" alt="">
-                    <button class="restart">Take again</button>`
+        result = `<p class="result-desc">You are from ${houses[num1-1].name}</p>
+                    <img class="result-image" src="${houses[num1-1].image}" alt="">`
+ 
     }else if(arrayOfHouse.length == 2){ //dual
-        const num1 = arrayOfHouse[0];
-        const num2 = arrayOfHouse[1];
-        result = `<p>You are mixed breed of ${houses[num1].name} and ${houses[num2].name}</p>
-                    <img src="${houses[num1].image}" alt=""> 
-                    <img src="${houses[num2].image}" alt=""> 
-                    <button class="restart">Take again</button>`
+        const random = Math.round(Math.random()) ;
+        const num1 = arrayOfHouse[random];
+        result =`<p class="result-desc">You are from ${houses[num1-1].name}</p>
+                    <img class="result-image" src="${houses[num1-1].image}" alt="">`
     }
 
     return result;
@@ -107,3 +108,4 @@ start_button.addEventListener('mouseover', (e) =>{
         e.target.style.src = `../assets/beginbutton-hover.svg`;
     }
 })
+

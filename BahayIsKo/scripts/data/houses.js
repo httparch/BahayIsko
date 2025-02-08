@@ -6,12 +6,12 @@ export const houses = [
     },
     {
         id: 2,
-        name: `The soaring hawks`,
-        image: `./assets/hawks.svg`
+        name: `The Iron Wolves`,
+        image: `./assets/wolves.svg`
     }, 
     {
         id: 3,
-        name: `The soaring hawks`,
+        name: `The Cunning Foxes`,
         image: `./assets/hawks.svg`
     }
 ]
