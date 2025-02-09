@@ -72,7 +72,8 @@ function describeResult(arrayOfHouse){
     if(arrayOfHouse.length == 1){ //solo
         const num1 = arrayOfHouse[0];
         result = `<p class="result-desc">You are from ${houses[num1-1].name}</p>
-                    <img class="result-image" src="${houses[num1-1].image}" alt="">`
+                    <img class="result-image" src="${houses[num1-1].image}" alt="">
+                    `
  
     }else if(arrayOfHouse.length == 2){ //dual
         const random = Math.round(Math.random()) ;

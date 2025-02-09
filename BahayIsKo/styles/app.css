@@ -1,7 +1,7 @@
 /*Start page*/
 
 *{
-    background-color: #641e1e;
+    background-color: #3c3c3c;
     font-family: "Pangolin", serif;
     font-weight: 400;
     font-style: normal;
@@ -9,17 +9,29 @@
 }
 
 .heading, .result-page {
-    font-size: 1.5em;
+    font-size: 1em;
+}
+
+.foot{
+    font-size: 1em;
 }
 
 .intro{
     font-size: 1.5em;
 }
 
-.start-page, .quiz-container, .result-page {
+.center a{
+    margin-top: 10px;
+}
+
+.start-page, .quiz-container, .center  {
     margin: auto;
     width: 50%;
     padding: 10px;
+    text-align: center 
+}
+
+.result-page{
     text-align: center 
 }
 
@@ -27,7 +39,11 @@
     align-items: center;    
 }
 
-.image-container img, .result-image{
+.result-image{
+    width: 100vh;
+}
+
+.image-container img{
     width: 300px; 
 }
 
@@ -35,7 +51,6 @@
     padding: 0;
     border: none;
     background: none;
-    
 }
 
 .begin-button {
@@ -52,26 +67,19 @@
 
 .begin-button:hover {
     opacity: 100%;
-    width: 250px;
-    height: 160px;
+    cursor: pointer;
 }
 
 .choices {
-    background: rgb(213, 213, 213);
-    padding: 10px 15px;
-    font-size:1.2rem; 
-    font-weight: 500;
-    color: #000;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s;
-    width: auto; 
-    min-width: 150px; 
-    max-width: 70%; 
-    text-align: center;
-    word-wrap: break-word; 
-    white-space: normal;
-    margin-top: 10px;
+    display: block;
+    width: 80%;
+    font-size: 20px;
+    max-width: 600px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    background-color: #f7e6dd;
+    color: black;
+    border-radius: 5px;
 }
 
 .choices:hover {
