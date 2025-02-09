@@ -1,7 +1,7 @@
 export const quiz = [
     {
         id: 0,
-        image: `./assets/hawks.svg`,
+        image: `./assets/000.gif`,
         question: `Its early morning, and youre about to leave for PUP. The commute is unpredictable. Whats your move?`,
         choices:
             {
