@@ -24,14 +24,11 @@
     margin-top: 10px;
 }
 
-.start-page, .quiz-container, .center  {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    text-align: center 
-}
+.start-page, .quiz-page, .center, .result-page { 
 
-.result-page{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
     text-align: center 
 }
 
@@ -91,7 +88,6 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 100vh;
 }
 
 .quiz-container p {
